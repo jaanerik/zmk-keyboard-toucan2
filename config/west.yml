@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/geeksville
     - name: beekeeb
       url-base: https://github.com/beekeeb
+    - name: jaanerik
+      url-base: https://github.com/jaanerik
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,8 +19,8 @@ manifest:
       remote: caksoylar
       revision: v0.3
     - name: zmk_driver_azoteq
-      remote: beekeeb
-      revision: main
+      remote: jaanerik
+      revision: fix/no-wait-input-report
     - name: zmk-input-zoom
       remote: beekeeb
       revision: main
