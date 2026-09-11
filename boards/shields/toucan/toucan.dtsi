@@ -141,11 +141,13 @@
         };
     };
 
+    // Mouse layer via temp-layer instead of &mo on BTN_TOUCH: a lost touch-release
+    // over the split link no longer leaves layer 4 stuck on. Thumb keys excluded.
     trackpad_listener: trackpad_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackpad_split>;
-        input-processors = <&zip_xy_scaler 100 100>, <&zip_scroll_scaler 1 20>, <&zip_zoom_mapper>, <&is_touching_processor>, <&swipe_button_mapper>;
+        input-processors = <&zip_xy_scaler 100 100>, <&zip_scroll_scaler 1 20>, <&zip_zoom_mapper>, <&zip_temp_layer 4 500>, <&swipe_button_mapper>;
         scroller {
             layers = <1 2>;
             input-processors = <
@@ -155,4 +157,8 @@
             >;
         };
     };
+};
+
+&zip_temp_layer {
+    excluded-positions = <36 37 38 39 40 41>;
 };
