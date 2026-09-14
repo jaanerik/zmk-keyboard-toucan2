@@ -23,21 +23,21 @@
     // Right Option dead keys on the macOS ABC layout (iTerm passes right Option through).
     macros {
         m_ae: m_ae { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp A>; };
-        m_AE: m_AE { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(A)>; };
+        m_ae_cap: m_ae_cap { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(A)>; };
         m_ue: m_ue { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp U>; };
-        m_UE: m_UE { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(U)>; };
+        m_ue_cap: m_ue_cap { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(U)>; };
         m_oe: m_oe { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp O>; };
-        m_OE: m_OE { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(O)>; };
+        m_oe_cap: m_oe_cap { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(U) &kp LS(O)>; };
         m_ot: m_ot { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(N) &kp O>; };
-        m_OT: m_OT { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(N) &kp LS(O)>; };
+        m_ot_cap: m_ot_cap { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp RA(N) &kp LS(O)>; };
     };
 
     // Shift picks the capital variant.
     behaviors {
-        ae: ae { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ae>, <&m_AE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-        ue: ue { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ue>, <&m_UE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-        oe: oe { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_oe>, <&m_OE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-        ot: ot { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ot>, <&m_OT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        ae: ae { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ae>, <&m_ae_cap>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        ue: ue { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ue>, <&m_ue_cap>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        oe: oe { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_oe>, <&m_oe_cap>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        ot: ot { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&m_ot>, <&m_ot_cap>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     };
 
     conditional_layers {
